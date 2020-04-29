@@ -13,7 +13,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "telephones")
-public class Telephone {
+public class Telephone extends Auditable {
 
     @Id
     @GeneratedValue
