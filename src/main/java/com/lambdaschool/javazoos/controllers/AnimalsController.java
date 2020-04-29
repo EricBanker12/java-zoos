@@ -26,7 +26,7 @@ public class AnimalsController {
     // GET /animals/count
     @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
     private ResponseEntity<?> getAnimalsCount() {
-        return new ResponseEntity<>(null, HttpStatus.OK);
+        return new ResponseEntity<>(animalsService.getCount(), HttpStatus.OK);
     }
 
 }

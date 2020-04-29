@@ -3,6 +3,7 @@ package com.lambdaschool.javazoos.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lambdaschool.javazoos.dto.AnimalCountDTO;
 import com.lambdaschool.javazoos.models.Animal;
 import com.lambdaschool.javazoos.repositories.AnimalRepository;
 
@@ -23,5 +24,14 @@ public class AnimalsServiceImpl implements AnimalsService {
             .forEachRemaining(animal -> animalsList.add(animal));
         return animalsList;
     };
+
+    @Override
+    public List<AnimalCountDTO> getCount() {
+        List<AnimalCountDTO> countList = new ArrayList<>();
+        animalrepos.findAnimalAndCount()
+            .iterator()
+            .forEachRemaining(animal -> countList.add(new AnimalCountDTO(animal)));
+        return countList;
+    }
 
 }
