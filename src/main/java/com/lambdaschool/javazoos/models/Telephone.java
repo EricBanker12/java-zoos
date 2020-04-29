@@ -26,7 +26,7 @@ public class Telephone extends Auditable {
     @Setter
     private String phonetype;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @Getter
     @Setter
     private String phonenumber;
