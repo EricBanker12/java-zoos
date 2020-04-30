@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,15 +31,19 @@ public class Zoo extends Auditable {
     private String zooname;
 
     @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = {"zoo"})
+    @Getter
     private List<Telephone> telephones;
 
     @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = {"zoo"})
+    @Getter
     private List<ZooAnimal> zooanimals;
 
     public Zoo() {}
 
-    public Zoo(String name) {
-        zooname = name;
+    public Zoo(String zooname) {
+        this.zooname = zooname;
     }
 
 }

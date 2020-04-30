@@ -19,7 +19,7 @@ import lombok.ToString;
     name = "zooanimals",
     uniqueConstraints = {@UniqueConstraint(columnNames = {"zooid", "animalid"})}
 )
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
 public class ZooAnimal extends Auditable implements Serializable {
 
