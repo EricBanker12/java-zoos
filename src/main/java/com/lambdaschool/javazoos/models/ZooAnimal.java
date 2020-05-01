@@ -42,11 +42,25 @@ public class ZooAnimal extends Auditable implements Serializable {
     @Setter
     private Animal animal;
 
+    @Getter
+    @Setter
+    private String incomingzoo;
+
     public ZooAnimal() {}
 
-    public ZooAnimal(Zoo zoo, Animal animal) {
+    public ZooAnimal(Zoo zoo, Animal animal, String incomingzoo) {
         this.zoo = zoo;
         this.animal = animal;
+        this.incomingzoo = incomingzoo;
+
+        // Iterator<ZooAnimal> zoos =  animal.getZoos().iterator();
+        // while (zoos.hasNext()) {
+        //     Zoo incomingzoo = zoos.next().getZoo();
+        //     if (incomingzoo != zoo) {
+        //         this.incomingzoo = incomingzoo.getZooname();
+        //         break;
+        //     }
+        // }
     }
 
 }

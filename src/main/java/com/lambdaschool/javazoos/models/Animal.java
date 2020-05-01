@@ -28,18 +28,14 @@ public class Animal extends Auditable {
     @Setter
     private String animaltype;
 
-    @Getter
-    @Setter
-    private String incomingzoo;
-
     @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL)
-    private List<ZooAnimal> zooanimals;
+    @Setter
+    private List<ZooAnimal> zoos;
 
     public Animal() {}
 
-    public Animal(String animaltype, String incomingzoo) {
+    public Animal(String animaltype) {
         this.animaltype = animaltype;
-        this.incomingzoo = incomingzoo;
     }
 
 }

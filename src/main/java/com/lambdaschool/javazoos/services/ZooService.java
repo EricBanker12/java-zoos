@@ -10,4 +10,6 @@ public interface ZooService {
 
     Zoo findById(long id);
 
+    String save(Zoo zoo);
+
 }

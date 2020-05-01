@@ -33,12 +33,14 @@ public class Zoo extends Auditable {
     @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = {"zoo"})
     @Getter
+    @Setter
     private List<Telephone> telephones;
 
     @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = {"zoo"})
     @Getter
-    private List<ZooAnimal> zooanimals;
+    @Setter
+    private List<ZooAnimal> animals;
 
     public Zoo() {}
 
